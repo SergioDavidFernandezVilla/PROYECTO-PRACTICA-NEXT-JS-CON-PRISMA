@@ -1,5 +1,5 @@
 import Prisma from "@/app/lib/prisma";
-import { validateUserData } from "@/app/utils/validation/validateUserData";
+import { validateRegisterData } from "@/app/utils/validation/validateUserData";
 
 export async function POST(request) {
     try {
@@ -9,7 +9,7 @@ export async function POST(request) {
         const {email, password, username, role} = body;
 
         //Restricciones y marcadores errores.
-        const validateDateUserError = validateUserData(email, password, username);
+        const validateDateUserError = validateRegisterData(email, password, username);
 
         //Todos errores
         const allErrors = [...validateDateUserError];
