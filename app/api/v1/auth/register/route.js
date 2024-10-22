@@ -1,12 +1,19 @@
 import Prisma from "@/app/lib/prisma";
+import bcrypt from 'bcrypt';
+
 import { validateRegisterData } from "@/app/utils/validation/validateUserData";
 
+
+//REGISTER <-
 export async function POST(request) {
     try {
 
         //Datos que se van enviar
         const body = await request.json();
         const {email, password, username, role} = body;
+        
+        // Hashear la contraseña antes de guardarla
+        const hashPassword = await bcrypt.hash(password, 10)
 
         //Restricciones y marcadores errores.
         const validateDateUserError = validateRegisterData(email, password, username);
@@ -25,7 +32,7 @@ export async function POST(request) {
         const NewUser = await Prisma.user.create({
             data: {
                 email: email,
-                password: password,
+                password: hashPassword,
                 username: username,
                 role
             }
