@@ -25,3 +25,8 @@ body {
     text-wrap: balance;
   }
 }
+
+.container_home{
+  display: grid;
+  grid-template-columns:320px 1fr;
+}
