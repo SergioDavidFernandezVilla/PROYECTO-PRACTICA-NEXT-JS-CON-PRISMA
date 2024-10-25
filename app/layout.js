@@ -1,12 +1,17 @@
 "use client"
 
+//font
 import localFont from "next/font/local";
+
+//css
 import "./globals.css";
 
 //Components
 import HeaderComponent from "./components/header/HeaderComponent";
 import { MenuHeaderComponent } from "./components/menu/MenuHeaderComponent";
-import { useState } from "react";
+
+//Hooks
+import useHookToogleClick from "./hooks/useHookToogleClick";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,14 +26,7 @@ const geistMono = localFont({
 
 export default function RootLayout({ children }) {
 
-  const [modeToogleMenu, setModeToogleMenu] = useState(true)
-
-  const handleToogleMenu = () => {
-
-    console.log("click")
-
-     setModeToogleMenu(prev => !prev);
-  }
+  const { modeToogle, handleClickToogle } = useHookToogleClick();
 
   return (
     <html lang="en">
@@ -36,19 +34,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       
-     
-
-        
-      <HeaderComponent handleToogleMenu={handleToogleMenu}/>
+      <HeaderComponent handleClickToogle={handleClickToogle}/>
 
         <div className="container_home">
 
        
-        {
-          modeToogleMenu ? (
-            <MenuHeaderComponent/>
-          ) : null
-        }
+        {modeToogle ? <MenuHeaderComponent /> : null}
 
         {children}
         </div>

@@ -4,16 +4,17 @@ import Link from "next/link";
 
 //Icons
 import logo from "../../utils/assets/logo.webp"
-import { IoMenu } from "react-icons/io5";
+import perfil from "../../utils/assets/perfil.jpg"
+import { IoMenu, IoSunny  } from "react-icons/io5";
 
-const HeaderComponent = ({handleToogleMenu}) => {
+const HeaderComponent = ({handleClickToogle}) => {
 
     return (
         <>
-        <header className="grid grid-flow-col-dense">    
-                <nav>
-                    <ul className="flex justify-start items-center gap-5 p-5">
-                        <li className="flex justify-center items-center gap-2" onClick={handleToogleMenu}>
+        <header className="grid grid-flow-col-dense h-20">    
+                <nav className="flex justify-start items-center pl-5">
+                    <ul className="flex justify-start items-center gap-5 w-full h-full">
+                        <li className="flex justify-center items-center gap-2" onClick={handleClickToogle}>
                             <IoMenu className="w-9 h-9 hover:cursor-pointer" />    
                         </li>
 
@@ -22,10 +23,23 @@ const HeaderComponent = ({handleToogleMenu}) => {
                             className="rounded-lg" />
                             <Link href="#" className="text-xl hover:text-red-300">SteamVideo</Link>
                         </li>
+                    </ul>                    
+                </nav>
+
+
+                <nav className="flex justify-end items-center pr-5">
+                    <ul className="flex justify-end items-center gap-5 w-full h-full">
+                        <li className="flex justify-center items-center gap-1">
+                            <Image src={perfil} alt="xd" className="rounded-full" width={36} height={36}/>
+                            <p className="hover:cursor-pointer">
+                                <strong>SopaDeMakaco</strong>
+                            </p>
+                        </li>
+
+                        <li className="flex justify-center items-center gap-1">
+                            <IoSunny className="w-7 h-7 hover:cursor-pointer"/>
+                        </li>
                     </ul>
-
-
-                    
                 </nav>
         </header>
     </>
