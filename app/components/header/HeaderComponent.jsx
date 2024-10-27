@@ -4,8 +4,8 @@ import Link from "next/link";
 
 //Icons
 import logo from "../../utils/assets/logo.webp"
-import perfil from "../../utils/assets/perfil.jpg"
 import { IoMenu, IoSunny  } from "react-icons/io5";
+import { PerfilComponent } from "../perfil/PerfilComponent";
 
 const HeaderComponent = ({handleClickToogle}) => {
 
@@ -29,12 +29,7 @@ const HeaderComponent = ({handleClickToogle}) => {
 
                 <nav className="flex justify-end items-center pr-5">
                     <ul className="flex justify-end items-center gap-5 w-full h-full">
-                        <li className="flex justify-center items-center gap-1">
-                            <Image src={perfil} alt="xd" className="rounded-full" width={36} height={36}/>
-                            <p className="hover:cursor-pointer">
-                                <strong>SopaDeMakaco</strong>
-                            </p>
-                        </li>
+                        <PerfilComponent/>
 
                         <li className="flex justify-center items-center gap-1">
                             <IoSunny className="w-7 h-7 hover:cursor-pointer"/>
