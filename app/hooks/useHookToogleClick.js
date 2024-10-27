@@ -4,7 +4,7 @@
 import { useState } from "react";
 
 function useHookToogleClick() {
-    const [modeToogle, setModeToogle] = useState(true);
+    const [modeToogle, setModeToogle] = useState(false);
 
     const handleClickToogle = () => {
         console.log("click");
