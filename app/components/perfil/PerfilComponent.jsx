@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 //Image
-import perfil from "../../utils/assets/perfil.jpg"
+import perfil from "../../utils/assets/images/perfil.jpg"
 import useHookToogleClick from "@/app/hooks/useHookToogleClick";
 
 export const PerfilComponent = () => {

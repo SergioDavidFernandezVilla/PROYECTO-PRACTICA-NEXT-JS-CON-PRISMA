@@ -9,9 +9,11 @@ import "./globals.css";
 //Components
 import HeaderComponent from "./components/header/HeaderComponent";
 import { MenuHeaderComponent } from "./components/menu/MenuHeaderComponent";
+import { InicioMenuHeaderComponent } from "./components/menu/InicioMenuHeaderComponent";
 
 //Hooks
 import useHookToogleClick from "./hooks/useHookToogleClick";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,13 +38,12 @@ export default function RootLayout({ children }) {
       
       <HeaderComponent handleClickToogle={handleClickToogle}/>
 
-        <div className="container_home">
+      <div className="container_home_large">
 
-       
-        {modeToogle ? <MenuHeaderComponent /> : null}
-
+       {modeToogle ? <MenuHeaderComponent /> : <InicioMenuHeaderComponent/>}
         {children}
-        </div>
+      </div>
+
       </body>
     </html>
   );

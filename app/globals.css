@@ -26,7 +26,12 @@ body {
   }
 }
 
-.container_home{
+.container_home_large{
   display: grid;
-  grid-template-columns:320px 1fr;
+  grid-template-columns: auto 1fr;
+}
+
+.container_home_small{
+  display: grid;
+  grid-template-columns: auto 1fr;
 }

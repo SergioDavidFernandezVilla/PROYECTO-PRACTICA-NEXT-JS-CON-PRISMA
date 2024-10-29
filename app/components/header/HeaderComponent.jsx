@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 //Icons
-import logo from "../../utils/assets/logo.webp"
+import logo from "../../utils/assets/images/logo.webp"
 import { IoMenu, IoSunny  } from "react-icons/io5";
 import { PerfilComponent } from "../perfil/PerfilComponent";
 
