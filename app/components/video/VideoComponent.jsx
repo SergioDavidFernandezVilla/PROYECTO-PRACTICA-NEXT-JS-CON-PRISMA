@@ -1,11 +1,12 @@
 export const VideoComponent = ({videoURL}) => {
     return (
         <article>
-             {videoURL ? (
-                <video src={videoURL} controls title="Video description"></video>
-            ) : (
-                <p>El video no está disponible.</p>
-            )}
+            
+                <video controls>
+                <source src="../public/videos/meme_corto.mp4" type="video/mp4" />
+                
+              </video>
+            
             <footer>
                 <h4>Titulo</h4>
                 <p>Descripcion</p>

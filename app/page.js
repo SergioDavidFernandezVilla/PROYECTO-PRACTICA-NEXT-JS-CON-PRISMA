@@ -14,7 +14,7 @@ export default function Home() {
           <h2 className="text-2xl">Tus recomendados</h2>
 
 
-          <VideoComponent videoURL={"ruta"}/>
+          <VideoComponent />
         </div>
 
       </main>

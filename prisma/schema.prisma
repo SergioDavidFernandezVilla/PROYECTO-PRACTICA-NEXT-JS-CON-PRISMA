@@ -16,7 +16,10 @@ datasource db {
 model video {
   id Int @id @default(autoincrement())
   title String
+  video_url String
   description String
+  likes Int @default(0)
+  deslikes Int @default(0)
   created_at  DateTime @default(now())
 }
 
